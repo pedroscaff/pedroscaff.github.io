@@ -1,0 +1,31 @@
+baseURL = "http://pedro.scaff.me/"
+languageCode = "en-us"
+title = "Pedro Scaff"
+theme = "cocoa"
+DefaultContentLanguage = "en"
+publishDir = "./"
+
+[[menu.main]]
+name = "About"
+weight = -120
+identifier = "about"
+url = "/about/"
+
+[[menu.main]]
+name = "Blog"
+weight = -110
+identifier = "blog"
+url = "/blog/"
+
+[params]
+author = "Pedro Scaff"
+avatar = "img/perfil.jpg"
+github = "//github.com/pedroscaff"
+email = "scaffpedro@gmail.com"
+linkedin = "//www.linkedin.com/in/pedro-scaff-b897bb7b/"
+lang = "en"
+i18n_flags = true
+
+[Languages]
+[Languages.en]
+[Languages.pt-br]
