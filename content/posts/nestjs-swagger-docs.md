@@ -1,7 +1,7 @@
 ---
 title: "Nestjs Swagger Docs With Examples"
 date: 2023-06-01T16:57:04+02:00
-draft: true
+draft: false
 ---
 
 NestJS has a great integration with OpenAPI/Swagger, leveraging decorators to add request and response information to endpoints. For more information on how to use it: https://docs.nestjs.com/openapi/introduction.
