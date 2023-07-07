@@ -17,7 +17,6 @@ import {
   NotFoundException,
   Param,
 } from "@nestjs/common";
-import {} from "@nestjs/swagger";
 
 class Cat {
   @ApiProperty({ example: "Ada" })
@@ -44,7 +43,7 @@ export class CatController {
     status: HttpStatus.NOT_FOUND,
     description: "Cat not found",
   })
-  async getCatById(@Param("id") id: string): Promise<Cat> {
+  getCatById(@Param("id") id: string): Cat {
     const cat = catStore.get(id);
     if (!cat) {
       throw new NotFoundException("Cat not found");
@@ -82,7 +81,7 @@ export class AdoptCatViolation {
   status: HttpStatus.NOT_FOUND,
   description: "Cat not found",
 })
-async adoptCatById(@Param("id") id: string): Promise<Cat> {
+adoptCatById(@Param("id") id: string): Cat {
   const cat = catStore.get(id);
   if (!cat) {
     throw new NotFoundException("Cat not found");
@@ -163,7 +162,7 @@ Now we can use the function to define the docs, and also use the violations as t
   status: HttpStatus.NOT_FOUND,
   description: "Cat not found",
 })
-async adoptCatByIdWithNiceDocs(@Param("id") id: string): Promise<Cat> {
+adoptCatByIdWithNiceDocs(@Param("id") id: string): Cat {
   const cat = catStore.get(id);
   if (!cat) {
     throw new NotFoundException("Cat not found");
@@ -201,3 +200,7 @@ const document = SwaggerModule.createDocument(app, config, options);
 ```
 
 For more information on it, see https://docs.nestjs.com/openapi/types-and-parameters#extra-models.
+
+## Final words
+
+I hope this example helps others, it is a simple task but that took me a bit of research to find out how to do it. Here is a link to the complete example: https://git.sr.ht/~pedroscaff/nestjs-swagger-docs-example
